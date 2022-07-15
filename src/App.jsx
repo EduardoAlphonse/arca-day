@@ -1,8 +1,13 @@
+import { useState } from "react";
 import "./App.css";
 
-import { feed } from "./database/quatree";
+import { feed as feedArray } from "./database/quatree";
 
 function App() {
+  const [feed, setFeed] = useState(feedArray);
+  const [filteredFeed, setFilteredFeed] = useState(feedArray);
+  const [search, setSearch] = useState("");
+
   function copy(message) {
     /* Get the text field */
     var copyText = document.getElementById("myInput");
@@ -18,15 +23,33 @@ function App() {
     /* Alert the copied text */
     // alert("Copied the text: " + copyText.value);
   }
+
+  function filterFeed(event) {
+    const searchText = event.target.value;
+    setSearch(searchText);
+
+    if (search.length !== 0) {
+      const newFilteredFeed = feed.filter((item) => item.includes(search));
+      setFilteredFeed(newFilteredFeed);
+      return;
+    }
+    setFilteredFeed(feedArray);
+  }
+
   return (
     <div className="App">
-      <ul>
-        {feed.map((item) => (
-          <li key={item}>
-            <button onClick={() => copy(item)}>{item}</button>
-          </li>
+      <input type="text" onChange={filterFeed} value={search} />
+      <div className="lists">
+        {filteredFeed.map((brand, index) => (
+          <ul key={`brand_${index}`}>
+            {brand.map((item) => (
+              <li key={item}>
+                <button onClick={() => copy(item)}>{item}</button>
+              </li>
+            ))}
+          </ul>
         ))}
-      </ul>
+      </div>
 
       <input type="text" id="myInput" />
     </div>

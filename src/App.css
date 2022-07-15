@@ -6,7 +6,7 @@
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 1em;
   will-change: filter;
 }
 .logo:hover {
@@ -39,15 +39,22 @@
   color: #888;
 }
 
+.lists {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 ul {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 
   list-style-type: none;
 }
 
 ul li {
+  font-size: 0.875rem;
 }
 
 #myInput {
