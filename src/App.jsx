@@ -31,7 +31,7 @@ function App() {
     if (searchText.length !== 0) {
       const newFilteredFeed = feed.map((item) =>
         item.filter((i) =>
-          i.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+          i.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
         )
       );
       setFilteredFeed(newFilteredFeed);
