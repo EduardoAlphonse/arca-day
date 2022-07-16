@@ -29,7 +29,12 @@ function App() {
     setSearch(searchText);
 
     if (search.length !== 0) {
-      const newFilteredFeed = feed.filter((item) => item.includes(search));
+      const newFilteredFeed = feed.map((item) =>
+        item.filter((i) =>
+          i.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        )
+      );
+      console.log(newFilteredFeed);
       setFilteredFeed(newFilteredFeed);
       return;
     }
