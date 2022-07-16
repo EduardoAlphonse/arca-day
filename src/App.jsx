@@ -28,13 +28,12 @@ function App() {
     const searchText = event.target.value;
     setSearch(searchText);
 
-    if (search.length !== 0) {
+    if (searchText.length !== 0) {
       const newFilteredFeed = feed.map((item) =>
         item.filter((i) =>
           i.toLocaleLowerCase().includes(search.toLocaleLowerCase())
         )
       );
-      console.log(newFilteredFeed);
       setFilteredFeed(newFilteredFeed);
       return;
     }
