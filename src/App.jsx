@@ -42,7 +42,12 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" onChange={filterFeed} value={search} />
+      <input
+        type="text"
+        onChange={filterFeed}
+        value={search}
+        placeholder="Procurar ração..."
+      />
       <div className="lists">
         {filteredFeed.map((brand, index) => (
           <ul key={`brand_${index}`}>
