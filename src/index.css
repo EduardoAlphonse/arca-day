@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -62,12 +62,15 @@ button:hover {
   /* border-color: #646cff; */
   background: #213547;
 }
+button:active {
+  background: #325d83;
+}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -78,4 +81,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
