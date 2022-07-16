@@ -5,6 +5,7 @@
 }
 
 .App {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +52,10 @@
   gap: 1rem;
 }
 
+.title {
+  font-size: 1.25rem;
+}
+
 ul {
   display: flex;
   flex-direction: column;
@@ -71,6 +76,7 @@ ul li {
   right: 0;
   border: none;
   background: none;
+  opacity: 0;
 }
 
 input {
