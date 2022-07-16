@@ -57,9 +57,10 @@ button {
 }
 button {
   transition: background 0.1s;
+  color: #ffffff;
 }
 button:hover {
-  /* border-color: #646cff; */
+  border-color: #646cff;
   background: #213547;
 }
 button:active {
